@@ -33,8 +33,14 @@ export function LoginPage() {
       }
 
       localStorage.setItem("authToken", data.token)
-      localStorage.setItem("userRole", role)
-      navigate("/")
+      localStorage.setItem("userRole", data.user.role);
+
+// ⭐ REDIRECT CORRECT PAGE
+      if (data.user.role === "Admin") {
+        navigate("/");
+        } else {
+                navigate("/ClientPage");
+}
     } catch (err) {
       setError("An error occurred. Please try again.")
     } finally {

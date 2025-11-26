@@ -1,3 +1,4 @@
+import { ClientPage } from "./USER/ClientPage"
 import { History } from "./ADMIN/History"
 import { Inventory } from "./ADMIN/Inventory"
 import { Dashboard } from "./ADMIN/Dashboard"
@@ -8,6 +9,8 @@ import { ForgotPasswordPage } from "./Authorization/ForgotPasswordPage"
 import { ProtectedRoute } from "./Authorization/ProtectedRoute"
 import { AuthProvider } from "./Authorization/AuthContext"
 import "./App.css"
+
+
 
 function App() {
   return (
@@ -42,6 +45,16 @@ function App() {
               </ProtectedRoute>
             }
           />
+
+          <Route
+            path="/ClientPage"
+            element={
+              <ProtectedRoute>
+                <ClientPage />
+              </ProtectedRoute>
+            }
+          />
+          
         </Routes>
       </Router>
     </AuthProvider>
