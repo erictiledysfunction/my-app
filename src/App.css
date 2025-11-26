@@ -3,36 +3,85 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 45.07px;
+  width: 36px;
   pointer-events: none;
+  padding-right: 20px;
+  display: absolute;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.elementsContainer {
+
+  position: absolute;
+  top: 75px;
+  left: 500px;
+  width: calc(100vw - 450px);
+
+
+  gap: 20px;
+  padding: 20px;
+ 
+  max-width: 1200px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.graphContainer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: absolute;
+  top: 300px;
+  right: 350px;
+  width: 550px;
+  
 }
 
-.App-link {
-  color: #61dafb;
+
+.InventoryContainer {
+
+  position: absolute;
+  top: 75px;
+  left: 500px;
+  width: calc(100vw - 450px);
+
+
+  gap: 20px;
+  padding: 20px;
+ 
+  max-width: 1200px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.HistoryContainer {
+
+  position: absolute;
+  top: 75px;
+  left: 600px;
+  width: calc(100vw - 450px);
+
+
+  gap: 20px;
+  padding: 20px;
+ 
+  max-width: 1200px;
 }
+
+
+/*
+.elementsContainer > div:nth-child(1) {
+  grid-column: 1 / -1;
+}
+
+
+.elementsContainer > div:nth-child(2) {
+  grid-column: 1 / -1;
+}
+
+
+.elementsContainer > div:nth-child(3) {
+  grid-column: 1 / 2;
+}
+
+
+.elementsContainer > div:nth-child(4) {
+  grid-column: 2 / -1;
+}
+*/
+/* Main app container with flexbox layout */

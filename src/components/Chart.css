@@ -1,0 +1,152 @@
+.graph-container {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  width: 600px;
+
+  
+}
+
+.graph-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 35px 0;
+  color: #000;
+}
+
+.chart-wrapper {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+/* Y-axis with labels */
+.y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 45px;
+  height: 340px;
+  padding-right: 10px;
+  font-size: 13px;
+  color: #666;
+  flex-shrink: 0;
+}
+
+.y-label {
+  line-height: 1;
+}
+
+/* Main chart area */
+.chart-main {
+  flex: 1;
+  position: relative;
+  height: 340px;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+/* Grid lines */
+.grid-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.grid-line {
+  width: 100%;
+  height: 1px;
+  background: #e0e0e0;
+}
+
+/* Bars container */
+.bars-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 0 20px 0 20px;
+}
+
+.bar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.bar-pair {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+  height: 85%;
+}
+
+.bar {
+  width: 28px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.bar.sales {
+  background-color: #b01a8c;
+}
+
+.bar.purchase {
+  background-color: #0066ff;
+}
+
+.x-label {
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+  padding-bottom: 8px;
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #333;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+}
+
+.legend-color.sales {
+  background-color: #b01a8c;
+}
+
+.legend-color.purchase {
+  background-color: #0066ff;
+}

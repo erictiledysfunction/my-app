@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import { History } from "./ADMIN/History"
+import { Inventory } from "./ADMIN/Inventory"
+import { Dashboard } from "./ADMIN/Dashboard"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { LoginPage } from "./Authorization/LoginPage"
+import { SignupPage } from "./Authorization/SignupPage"
+import { ForgotPasswordPage } from "./Authorization/ForgotPasswordPage"
+import { ProtectedRoute } from "./Authorization/ProtectedRoute"
+import { AuthProvider } from "./Authorization/AuthContext"
+import "./App.css"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <AuthProvider>
+      <Router>
+        <Routes>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/Inventory"
+            element={
+              <ProtectedRoute>
+                <Inventory />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/History"
+            element={
+              <ProtectedRoute>
+                <History />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </Router>
+    </AuthProvider>
+  )
 }
 
-export default App;
+export default App
